@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+sdir="$(cd -P . && pwd -P)"
+
+cd ../..
+exec 2>&1
+exec chpst -e "$sdir/env" bash -c 'exec bundle exec unicorn -p $PORT -c ./config/unicorn.rb'
