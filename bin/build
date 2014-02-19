@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+$:.unshift File.expand_path('../../lib', __FILE__)
+
+require 'worker'
+
+(1..10).each {|n| HardWorker.perform_async('bob', rand(100)) }
