@@ -7,6 +7,7 @@ class HardWorker
   include Sidekiq::Worker
 
   def perform(name, count)
+    sleep count
     logger.info "Doing hard work with #{name}: #{count}"
   end
 end
