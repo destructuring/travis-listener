@@ -4,6 +4,7 @@ ruby '1.9.3'
 
 gem 'travis-support',  github: 'travis-ci/travis-support'
 gem 'travis-sidekiqs', github: 'travis-ci/travis-sidekiqs', require: nil
+gem 'slim' # for sidekiq/web
 
 gem 'metriks',         '~> 0.9.7.3'
 gem 'sinatra',         '~> 1.4.2'
