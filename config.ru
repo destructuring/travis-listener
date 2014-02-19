@@ -5,5 +5,5 @@ require 'travis/listener'
 Travis::Listener.setup
 Travis::Listener.connect
 
-use Raven::Rack
-run Travis::Listener::App
+require 'sidekiq/web'
+run Rack::URLMap.new('/' => Travis::Listener::App, '/sidekiq' => Sidekiq::Web)
